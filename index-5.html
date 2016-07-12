@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://vjs.zencdn.net/5.10.4/video-js.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="video-container">
+    <video
+      id="youtube-video"
+      class="video-js vjs-default-skin vjs-big-play-centered"
+      controls
+      width="600" height="264"
+      data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=dxb-vORCHJM"}] }'
+    >
+    </video>
+    <div class="text-overlay">
+      TEST TEXT VIDEO
+    </div>
+  </div>
+   
+<!--
+  <div class="video-container">
+    <video id="vid1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360" data-setup='{ "techOrder": ["soundcloud"], "src": "https://soundcloud.com/kanyewest/nomorepartiesinla",soundcloud: {clientId: "YOUR CLIENT ID"}}'></video>
+
+
+    <div class="text-overlay">
+      TEST TEXT AUDIO
+    </div>
+  </div>
+-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="http://vjs.zencdn.net/5.10.4/video.js"></script>
+  <script src="youtube.js"></script>
+<!--  <script src="sc.js"></script>-->
+  <script src="main.js"></script>
+  <script>
+   An example of playing with the Video.js javascript API
+   You can look at the doc there: http://docs.videojs.com/docs/guides/api.html
+  videojs('youtube-video').ready(function() {
+    var myPlayer = this;
+    myPlayer.src({ type: 'video/youtube', src: 'https://www.youtube.com/watch?v=dxb-vORCHJM' });
+  });
+    
+//    videojs('vid1').ready(function() {
+//      var myPlayer = this;
+//      myPlayer.src({ type: "video/soundcloud", language: 'fr', techOrder: ['soundcloud'], src: "https://soundcloud.com/kanyewest/nomorepartiesinla" });
+//    });
+  </script>
+    
+</body>
+</html>
